@@ -1,0 +1,76 @@
+@import "../../../variables";
+@import "../../../mixins";
+
+$size: 600px;
+$thumb_size: 200px;
+$height: $thumb_size;
+$who_size: $size - $thumb_size - 20px;
+
+.photographers {
+
+  @include block;
+  width: $size;
+  height: $height;
+  overflow: hidden;
+  margin: 0 auto;
+
+  .slider {
+    position: relative;
+    display: block;
+    width: 100% * 50;
+    height: $height;
+  }
+
+  .credit {
+    position: relative;
+    display: inline-block;
+    width: $size;
+    height: $height;
+    vertical-align: top;
+    border: solid 1px #ccc;
+    box-shadow: 1px 2px 4px #ccc;
+
+    .thumb, .who {
+      position: relative;
+      display: inline-block;
+      height: $height;
+      vertical-align: top;
+    }
+
+    .thumb {
+      width: $thumb_size;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .who {
+      width: $who_size;
+      & > div {
+        margin: 0.5em 1em;
+      }
+      .name { font-size: 1.2em; font-weight: bold; }
+    }
+  }
+
+}
+
+
+.bubble-nav {
+  width: $size;
+  margin: 1em auto;
+}
+
+.bubble {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: solid 1px $color_gray;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &.current {
+    background: map-get($color_set_gray, medium);
+  }
+}

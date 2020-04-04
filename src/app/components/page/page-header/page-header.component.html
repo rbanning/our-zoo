@@ -2,19 +2,23 @@
   <div class="container" fxLayout="flex" fxLayoutAlign="start center" fxLayoutGap="1em">
 
     <span class="app-title">
-      <app-covid-icon size="40px"></app-covid-icon>
+      <app-logo-icon size="40px"></app-logo-icon>
       <span class="brand">{{appTitle}}</span>
     </span>
 
     <span class="flex"></span>
 
-    <a href="#" class="with-icon" mat-button>
+    <a [routerLink]="['/home']" routerLinkActive="active"  class="with-icon" mat-button>
+      <mat-icon>home</mat-icon>
+      Home
+    </a>
+    <a [routerLink]="['/notifications']" routerLinkActive="active"  class="with-icon" mat-button>
       <mat-icon>notifications</mat-icon>
       Notifications
     </a>
-    <a href="#" class="with-icon" mat-button>
-      <mat-icon>message</mat-icon>
-      Messages
+    <a [routerLink]="['/credits']" routerLinkActive="active"  class="with-icon" mat-button>
+      <mat-icon>card_membership</mat-icon>
+      Credits
     </a>
     <a href="#" class="with-icon" mat-button>
       <mat-icon>account_box</mat-icon>

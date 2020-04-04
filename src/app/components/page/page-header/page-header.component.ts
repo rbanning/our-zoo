@@ -9,7 +9,7 @@ export class PageHeaderComponent implements OnInit {
   @Output()
   menuToggle = new EventEmitter();
 
-  appTitle = "COVID-19 Sim";
+  appTitle = "Our Zoo";
 
   constructor() { }
 

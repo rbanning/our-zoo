@@ -19,7 +19,7 @@
   border-bottom: solid 2px transparent;
   transition: color $timing ease-in-out;
 
-  &:hover {
+  &:hover, &.active {
     color: $hover-color;
   }
   &::after {
@@ -40,7 +40,7 @@
   &.with-icon {
     .mat-icon {
       //move icons down a bit
-      transform: translateY(0.2em);
+      transform: translateY(-0.1em);
     }
   }
 

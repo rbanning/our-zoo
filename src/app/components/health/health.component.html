@@ -1,6 +1,0 @@
-<div class="health" *ngIf="health" fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="1em">
-  <app-health-status [status]="health.status"></app-health-status>
-  <span title="vitals age">{{health.age | number: '1.1-1'}} yrs</span>
-  <span title="vitals health (higher is better)">{{health.health | number: '1.1-1'}}/{{ranges.health.max | number: '1.0-0'}} &#9825;</span>
-  <span title="vitals spores (lower is better)">{{health.spores | number: '1.1-1'}}/{{ranges.spores.max}} &#9741;</span>
-</div>

@@ -1,0 +1,36 @@
+:host {
+  display: inline-block;
+  margin-right: 1em;
+  transform: translateY(-25px);
+}
+
+.logo-icon {
+  position: relative;
+  display: inline-block;
+
+  img {
+    position: absolute;
+    top: 0; left: 0;
+
+    transition: opacity 1.2s ease-in-out;
+
+    &.current {
+      opacity: 1;
+    }
+    &.pending {
+      opacity: 0;
+    }
+  }
+
+
+  &.working {
+    img {
+      &.current {
+        opacity: 0;
+      }
+      &.pending {
+        opacity: 1;
+      }
+    }
+  }
+}

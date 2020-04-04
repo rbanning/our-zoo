@@ -6,13 +6,13 @@
   margin: 3em 0 0 0;
   padding: 1em 0;
   background: map-get($color_set_gray, "light");
-  color: map-get($color_set_black, "medium");
+  color: map-get($color_set_black, "light");
 }
 
 footer {
   @include container($page_width);
 
   a {
-    @include link($color_gray);
+    @include link($color_gray, map-get($color_set_black, "medium"));
   }
 }

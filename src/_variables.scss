@@ -1,9 +1,9 @@
 //material theme
 @import '~@angular/material/theming';
 
-$app-primary: mat-palette($mat-pink);
-$app-accent: mat-palette($mat-blue);
-$app-warn: mat-palette($mat-purple);
+$app-primary: mat-palette($mat-light-green);
+$app-accent: mat-palette($mat-amber);
+$app-warn: mat-palette($mat-red);
 
 $app-gray: mat-palette($mat-blue-grey);
 $app-grey: $app-gray;
@@ -42,4 +42,4 @@ $color_gray: map-get($color_set_gray, "full");
 $color_grey: map-get($color_set_gray, "full");
 
 
-$page_width: 900px;
+$page_width: 1200px;

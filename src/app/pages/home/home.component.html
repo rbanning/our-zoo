@@ -1,40 +1,10 @@
-
-<h1>Population</h1>
-
-<div fxLayout="row" fxLayoutGap="2em">
-  <div class="box primary-full"></div>
-  <div class="box primary-medium"></div>
-  <div class="box primary-light"></div>
+<div class="zoo-map">
+  <img class="map" src="/assets/zoo-map.png" alt="the zoo map" />
+  <button class="pond">The Pond</button>
+  <button class="jungle">Our Jungle</button>
+  <button class="oceania">Oceania</button>
+  <button class="abstractia">Abstractia</button>
+  <button class="savana">The Savana</button>
+  <button class="autumn">Autumn Grove</button>
+  <button class="dots">Dots &amp; Dashes</button>
 </div>
-
-<div fxLayout="row" fxLayoutGap="2em">
-  <div class="box accent-full"></div>
-  <div class="box accent-medium"></div>
-  <div class="box accent-light"></div>
-</div>
-
-<h3>Assumptions</h3>
-<div class="assumptions">
-  <span>size: {{assumptions.initial.size}}</span>
-  <span>grid: {{assumptions.grid.horizontal}} &times; {{assumptions.grid.vertical}}  ( {{assumptions.initial.location}} )</span>
-  <span><app-distribution label="age" [distribution]="assumptions.initial.age"></app-distribution></span>
-  <span><app-distribution label="health" [distribution]="assumptions.initial.health"></app-distribution></span>
-  <span><app-distribution label="preexisting" [distribution]="assumptions.initial.preexisting"></app-distribution></span>
-</div>
-
-<h3>Grid</h3>
-<table class="grid" *ngIf="grid$ | async as grid">
-  <tbody>
-    <tr *ngFor="let row of grid; let y = index">
-      <td *ngFor="let cell of row; let x = index" [class.selected]="isSelected(x,y)">
-        <app-cell
-          [people]="cell"
-          [location]="location(x,y)"
-          [size]="80"
-          (click)="view(location(x,y), cell)"
-          class="clickable"></app-cell>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
