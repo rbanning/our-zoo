@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "covid-sim": {
+    "our-zoo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -39,7 +39,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/covid-sim",
+            "outputPath": "dist/our-zoo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -90,18 +90,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "covid-sim:build"
+            "browserTarget": "our-zoo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "covid-sim:build:production"
+              "browserTarget": "our-zoo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "covid-sim:build"
+            "browserTarget": "our-zoo:build"
           }
         },
         "test": {
@@ -140,16 +140,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "covid-sim:serve"
+            "devServerTarget": "our-zoo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "covid-sim:serve:production"
+              "devServerTarget": "our-zoo:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "covid-sim"
+  "defaultProject": "our-zoo"
 }
