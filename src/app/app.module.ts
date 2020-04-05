@@ -12,6 +12,7 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from "@angular/material/icon";
+import {MatCardModule} from '@angular/material/card';
 
 const materialModules = [
   MatToolbarModule,
@@ -21,7 +22,8 @@ const materialModules = [
   MatSidenavModule,
   MatExpansionModule,
   MatButtonModule,
-  MatIconModule
+  MatIconModule,
+  MatCardModule,
 ];
 
 import { AppRoutingModule } from './app-routing.module';
@@ -38,6 +40,9 @@ import { NotificationsComponent } from './pages/notifications/notifications.comp
 import { CreditsComponent } from './pages/credits/credits.component';
 import { ExhibitComponent } from './components/exhibit/exhibit.component';
 import { KeepersComponent } from './pages/keepers/keepers.component';
+import { PanelSliderComponent } from './components/panel-slider/panel-slider.component';
+import { CreditBadgeComponent } from './components/credit-badge/credit-badge.component';
+import { AreasComponent } from './pages/areas/areas.component';
 
 
 
@@ -54,7 +59,10 @@ import { KeepersComponent } from './pages/keepers/keepers.component';
     NotificationsComponent,
     CreditsComponent,
     ExhibitComponent,
-    KeepersComponent
+    KeepersComponent,
+    PanelSliderComponent,
+    CreditBadgeComponent,
+    AreasComponent,
   ],
   imports: [
     BrowserModule,

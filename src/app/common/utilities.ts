@@ -6,6 +6,13 @@ export const capitalize = (text: string) => {
   }).join(' ');
 }
 
+export const replaceSpace = (text: string, replacement: string) => {
+  if (text) {
+    return text.replace(/\s/g, replacement);
+  }
+  //else
+  return null;
+}
 
 
 export type ArrayMapFunction = (v?: any, i?: number) => any;

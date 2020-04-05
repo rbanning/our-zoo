@@ -1,10 +1,16 @@
-<div class="zoo-map">
-  <img class="map" src="/assets/zoo-map.png" alt="the zoo map" />
-  <button class="pond">The Pond</button>
-  <button class="jungle">Our Jungle</button>
-  <button class="oceania">Oceania</button>
-  <button class="abstractia">Abstractia</button>
-  <button class="savana">The Savana</button>
-  <button class="autumn">Autumn Grove</button>
-  <button class="dots">Dots &amp; Dashes</button>
+<div class="zoo-map"
+  fxLayout="row wrap">
+
+  <div
+    class="area"
+    *ngFor="let a of areas$ | async"
+    (click)="goto(a)">
+
+    <img [src]="a.thumb" [alt]="a.name">
+    <div class="popup">
+      <div class="name">{{a.name}}</div>
+      <div class="tagline">{{a.tagline}}</div>
+      <div class="message">click to view exhibits</div>
+    </div>
+  </div>
 </div>

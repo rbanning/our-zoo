@@ -1,0 +1,25 @@
+@import "../../../variables";
+
+.mat-card-avatar {
+  $size: 30px;
+  width: $size;
+  height: $size;
+}
+.mat-card-header {
+  margin-bottom: 0.3em;
+}
+.tagline {
+  color: map-get($color_set_gray, medium);
+  font-size: 1.4em;
+}
+
+.mat-card {
+  margin: 1em;
+  width: 30%;
+  min-width: 300px;
+}
+
+.credit {
+  margin-top: 2em;
+  font-size: smaller;
+}

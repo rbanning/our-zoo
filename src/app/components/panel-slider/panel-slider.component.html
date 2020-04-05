@@ -1,0 +1,26 @@
+<div class="panel-slider"
+  [style.width]="width+'px'"
+  [style.height]="height+'px'">
+
+  <div class="slider"
+    (pan)="pan($event)"
+    [style.transform]="'translateX(' + translateX + 'px)'">
+
+    <ng-content></ng-content>
+
+  </div>
+
+</div>
+<div class="bubble-nav"
+  [style.width]="width+'px'"
+  [style.height]="height+'px'"
+  fxLayout="row wrap"
+  fxLayoutAlign="center center"
+  fxLayoutGap="0.5em">
+
+  <span class="bubble"
+    *ngFor="let p of panels; let i = index"
+    [class.current]="i === current"
+    (click)="goto(i)">
+  </span>
+</div>

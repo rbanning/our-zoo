@@ -1,31 +1,21 @@
-<div class="photographers">
-  <div class="slider"
-    (pan)="pan($event)"
-    [style.transform]="'translateX(' + translateX + 'px)'">
+<div class="photographers" fxLayout="column" fxLayoutGap="2em">
 
-    <div class="credit"
-      *ngFor="let p of panels; let i = index">
-      <div class="thumb">
-        <img [src]="p.thumb" alt="Sample Photo" />
+  <div class="credit" *ngFor="let p of credits$ | async">
+    <div class="thumb">
+      <img [src]="p.thumb" alt="Sample Photo" />
+    </div>
+    <div class="who">
+      <div class="name">{{p.name}}</div>
+      <div class="badge">
+        <app-credit-badge [credit]="p"></app-credit-badge>
       </div>
-      <div class="who">
-        <div class="name">{{p.name}}</div>
-        <div class="bio">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit fugit et ipsum vitae adipisci sit suscipit,
-          illo esse enim aspernatur. Et ipsa enim suscipit minus ea dolore optio est illum!
-        </div>
-        <div class="action">
-          <a [href]="'https://www.google.com?q=' + p.id">View More...</a>
-        </div>
+      <div class="action" fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="1em">
+        <a mat-stroked-button [href]="p.url" target="_blank">More Photos...</a>
       </div>
     </div>
   </div>
 
-</div>
-<div class="bubble-nav" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="0.5em">
-  <span class="bubble"
-    *ngFor="let p of panels; let i = index"
-    [class.current]="i === current"
-    (click)="goto(i)">
-  </span>
+  <div class="nav" *ngIf="current">
+    <a mat-raised-button color="primary" [routerLink]="['/credits']">View All Photographers...</a>
+  </div>
 </div>

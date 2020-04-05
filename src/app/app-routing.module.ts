@@ -6,6 +6,7 @@ import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { NotificationsComponent } from './pages/notifications/notifications.component';
 import { CreditsComponent } from './pages/credits/credits.component';
 import { KeepersComponent } from './pages/keepers/keepers.component';
+import { AreasComponent } from './pages/areas/areas.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,16 @@ const routes: Routes = [
     path: "privacy", component: PrivacyComponent
   },
   {
+    path: "areas", component: AreasComponent
+  },
+  {
+    path: "areas/:id", component: AreasComponent
+  },
+  {
     path: "credits", component: CreditsComponent
+  },
+  {
+    path: "credits/:id", component: CreditsComponent
   },
   {
     path: "keepers", component: KeepersComponent

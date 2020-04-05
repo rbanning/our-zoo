@@ -1,7 +1,6 @@
 import { IKeeper, Keeper } from './keeper';
-import { GUID } from './guid';
 import { IArea, Area } from './area';
-
+import * as utils from './utilities';
 
 
 export interface IExhibit {
@@ -21,11 +20,8 @@ export class Exhibit {
   keeper: IKeeper;
 
   constructor(obj: any = null) {
-    this.id = GUID.create().toSimpleString();
-    this.keeper = null;
-
     if (obj) {
-      this.id = obj.id || this.id;
+      this.id = obj.id || utils.replaceSpace(obj.name, '-').toLocaleLowerCase();
       this.name = obj.name;
       this.description = Array.isArray(obj.description) ?
             obj.description :

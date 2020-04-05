@@ -1,0 +1,26 @@
+<div class="areas" fxLayout="row wrap">
+
+    <mat-card *ngFor="let a of areas$ | async" class="mat-elevation-z2">
+      <mat-card-header>
+        <div mat-card-avatar class="colored-circle" [style.background]="a.color"></div>
+        <mat-card-title>{{a.name}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="a.thumb" alt="Thumbnail of the area" />
+      <mat-card-content>
+        <div class="tagline">{{a.tagline}}</div>
+        <p class="description">{{a.description}}</p>
+        <div class="credit" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="1em">
+          <span class="label">Photograph by </span>
+          <app-credit-badge [credit]="a.credit"></app-credit-badge>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-stroked-button [routerLink]="['/areas', a.id]">View Exhibits</a>
+      </mat-card-actions>
+    </mat-card>
+
+</div>
+
+<div class="nav" *ngIf="current">
+  <a mat-raised-button color="primary" [routerLink]="['/areas']">View All Areas...</a>
+</div>

@@ -7,19 +7,7 @@ $height: $thumb_size;
 $who_size: $size - $thumb_size - 20px;
 
 .photographers {
-
   @include block;
-  width: $size;
-  height: $height;
-  overflow: hidden;
-  margin: 0 auto;
-
-  .slider {
-    position: relative;
-    display: block;
-    width: 100% * 50;
-    height: $height;
-  }
 
   .credit {
     position: relative;
@@ -47,30 +35,25 @@ $who_size: $size - $thumb_size - 20px;
 
     .who {
       width: $who_size;
+      height: $height;
       & > div {
         margin: 0.5em 1em;
       }
       .name { font-size: 1.2em; font-weight: bold; }
+      .action {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: rgba(255,255,255, 0.8);
+        width: 95%;
+      }
     }
+
   }
 
 }
 
-
-.bubble-nav {
-  width: $size;
-  margin: 1em auto;
-}
-
-.bubble {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border: solid 1px $color_gray;
-  border-radius: 50%;
-  cursor: pointer;
-
-  &.current {
-    background: map-get($color_set_gray, medium);
-  }
+.nav {
+  @include block;
+  margin: 2em 0;
 }

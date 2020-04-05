@@ -6,6 +6,47 @@
   border: solid 20px rgb(153, 69, 43);
   border-radius: 10px;
 
+  .area {
+    @include block;
+    width: 20%;
+    min-width: 200px;
+    overflow: hidden;
+    margin: 0.5em;
+    cursor: pointer;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .popup {
+      position: absolute;
+      left: 0; right: 0;
+      bottom: 0;
+      padding: 0.5em;
+      background: rgba(0,0,0, 0.5);
+      color: $color_white;
+
+      text-align: center;
+      .name {
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+      .message {
+        font-size: smaller;
+        color: map-get($color_set_white, medium);
+      }
+
+      transform: translateY(100%);
+      transition: transform 0.4s ease-in-out 0.2s;
+    }
+
+    &:hover {
+      .popup {
+        transform: translateY(0);
+      }
+    }
+  }
   img.map {
     @include block;
     height: auto;
