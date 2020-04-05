@@ -1,0 +1,18 @@
+@import "../../../variables";
+@import "../../../mixins";
+
+.keeper {
+  max-width: 450px;
+  border: solid 1px map-get($color_set_gray, light);
+  box-shadow: 1px 2px 4px $color_gray;
+  margin: 1em 0;
+
+  .details {
+    padding-right: 0.5em;
+  }
+
+  .name {
+    margin: 0.5em 0 1em 0;
+    padding: 0;
+  }
+}

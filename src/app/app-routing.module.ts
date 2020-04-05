@@ -5,6 +5,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { NotificationsComponent } from './pages/notifications/notifications.component';
 import { CreditsComponent } from './pages/credits/credits.component';
+import { KeepersComponent } from './pages/keepers/keepers.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,9 @@ const routes: Routes = [
   },
   {
     path: "credits", component: CreditsComponent
+  },
+  {
+    path: "keepers", component: KeepersComponent
   },
   {
     path: "notifications", component: NotificationsComponent

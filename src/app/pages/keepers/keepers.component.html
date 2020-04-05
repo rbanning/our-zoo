@@ -1,0 +1,18 @@
+<h1>Keepers</h1>
+
+<div class="wrapper" fxLayout="row wrap" fxLayoutGap="2em">
+
+  <div class="keeper" *ngFor="let k of keepers$ | async" fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="0.5em">
+
+    <img class="avatar" [src]="k.avatar" alt="keeper avatar" />
+    <div class="details">
+      <h2 class="name">{{k.name}}</h2>
+      <p>{{k.bio}}</p>
+      <div class="action">
+        <a [href]="k.id">More Infor</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>

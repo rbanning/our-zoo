@@ -36,6 +36,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { NotificationsComponent } from './pages/notifications/notifications.component';
 import { CreditsComponent } from './pages/credits/credits.component';
+import { ExhibitComponent } from './components/exhibit/exhibit.component';
+import { KeepersComponent } from './pages/keepers/keepers.component';
 
 
 
@@ -50,7 +52,9 @@ import { CreditsComponent } from './pages/credits/credits.component';
     AboutComponent,
     PrivacyComponent,
     NotificationsComponent,
-    CreditsComponent
+    CreditsComponent,
+    ExhibitComponent,
+    KeepersComponent
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,22 @@
-import { WHITE_ON_BLACK_CSS_CLASS } from '@angular/cdk/a11y/high-contrast-mode/high-contrast-mode-detector';
+
+export const capitalize = (text: string) => {
+  const parts = text.split(' ').filter(Boolean);
+  return parts.map((word) => {
+    return word[0].toLocaleUpperCase() + word.substr(1);
+  }).join(' ');
+}
+
+
 
 export type ArrayMapFunction = (v?: any, i?: number) => any;
 
 export const buildArray = (size: number, mapFn: ArrayMapFunction): any[] => {
   return Array.from({length: size}, mapFn);
+}
+
+export const randomElement = (array: any[]) => {
+  if (!Array.isArray(array)) { throw new Error("randomElement() expects an array argument"); }
+  return array[(Math.random() * array.length) | 0];
 }
 
 
