@@ -8,14 +8,24 @@ const keeperRepo: IKeeper[] = [
     {
       id: "@ruby", name: "Ruby",
       avatar: avatarLookup("tiffany"),
-      bio: null
+      bio: null,
+      real: true
     }
   ),
   new Keeper(
     {
       id: "@rob", name: "Rob",
       avatar: avatarLookup("franklin"),
-      bio: null
+      bio: null,
+      real: true
+    }
+  ),
+  new Keeper(
+    {
+      id: "@chapin", name: "Chapin",
+      avatar: avatarLookup("mr-incredible"),
+      bio: null,
+      real: true
     }
   ),
 ];
@@ -29,14 +39,17 @@ class Repo {
     })
   }
 
-  create(count: number = null): IKeeper[] {
+  getKeepers(): IKeeper[] {
+    return [...this._repo];
+  }
+  getAvailable(count: number = null): IKeeper[] {
     count = count || this.names.length;
 
-    const ret:IKeeper[] = [...this._repo];
+    const ret:IKeeper[] = [];
     let name: string;
 
     for (let index = 0; index < count && ret.length < count; index++) {
-      if (!ret.some(k => k.avatar === AVATARS[index])) {
+      if (!this._repo.some(k => k.avatar === AVATARS[index])) {
         name = utils.capitalize(this.names[index]);
         ret.push(new Keeper({
           id: `@${this.names[index]}`,
@@ -111,14 +124,30 @@ class Repo {
 
 @Injectable()
 export class KeeperService {
+  private repo: Repo = new Repo();
   private keeperSubject: BehaviorSubject<IKeeper[]>;
   keepers$: Observable<IKeeper[]>;
 
   constructor() {
-    const repo = new Repo();
-    this.keeperSubject = new BehaviorSubject<IKeeper[]>(repo.create());
+    this.keeperSubject = new BehaviorSubject<IKeeper[]>(this.repo.getKeepers());
     this.keepers$ = this.keeperSubject.asObservable();
   }
+
+  loadKeepersOnly() {
+    this.keeperSubject.next([...this.repo.getKeepers()]);
+  }
+  loadAvatarsOnly() {
+    this.keeperSubject.next([...this.repo.getAvailable()]);
+  }
+  loadAll() {
+    this.keeperSubject.next([...this.repo.getKeepers(), ...this.repo.getAvailable()]);
+  }
+
+  lookup(target: string) {
+    const key = target.indexOf('@') === 0 ? 'id' : 'name';
+    return this.keeperSubject.value.find((c: IKeeper) => c[key] === target);
+  }
+
 }
 
 

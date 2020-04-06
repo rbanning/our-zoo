@@ -1,4 +1,24 @@
-<div class="areas" fxLayout="row wrap">
+<div class="area-wrapper" *ngIf="currentArea; else showAll">
+  <h1>
+    <app-area-badge [area]="currentArea"></app-area-badge>
+  </h1>
+
+  <div class="exhibits-wrapper" *ngIf="exhibits$ | async as exhibits">
+    <div class="exhibits" *ngIf="exhibits.length > 0; else noExhibits">
+
+    </div>
+  </div>
+
+
+  <div class="nav">
+    <a mat-raised-button color="primary" [routerLink]="['/areas']">View All Areas...</a>
+  </div>
+
+</div>
+
+<ng-template #showAll>
+
+  <div class="areas" fxLayout="row wrap">
 
     <mat-card *ngFor="let a of areas$ | async" class="mat-elevation-z2">
       <mat-card-header>
@@ -19,8 +39,15 @@
       </mat-card-actions>
     </mat-card>
 
-</div>
+  </div>
 
-<div class="nav" *ngIf="current">
-  <a mat-raised-button color="primary" [routerLink]="['/areas']">View All Areas...</a>
-</div>
+</ng-template>
+
+<ng-template #noExhibits>
+  <h3 class="color-warn">Under Construction</h3>
+  <p>This area of the zoo is currently being renovated.  If you
+    are interested in currating an exhibit here, please
+    <a [routerLink]="['/contact']">contact us</a>
+    with your idea(s).
+  </p>
+</ng-template>

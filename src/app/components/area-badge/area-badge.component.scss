@@ -1,0 +1,28 @@
+@import '../../../variables';
+
+:host {
+  display: inline-flex;
+  align-items: center;
+
+  &.with-border {
+    border: solid 2px map-get($color_set_gray, light);
+    border-radius: 40%;
+    background: adjust-color($color: map-get($color_set_gray, light), $lightness: 10%);
+  }
+
+  cursor: pointer;
+
+  img.badge, span.name {
+    display: inline-block;
+  }
+
+  img.badge {
+    border-radius: 10px;
+  }
+
+  span.name {
+    font-size: larger;
+    font-weight: bold;
+    margin: 0 0.5em 0 0.15em;
+  }
+}

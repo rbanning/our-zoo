@@ -21,6 +21,11 @@ export class AreaService {
     );
     this.areas$ = this.areaSubject.asObservable();
    }
+
+  lookup(id: string) {
+    return this.areaSubject.value.find((c: IArea) => c.id === id);
+  }
+
 }
 
 const areas = [

@@ -1,4 +1,8 @@
-<h1>Keepers</h1>
+<h1>{{realKeepersOnly ? 'Keepers' : 'Available Avatars'}}</h1>
+
+<button mat-raised-button color="primary" (click)="toggleData()">
+  {{realKeepersOnly ? 'Show Available Avatars' : 'Show Keepers' }}
+</button>
 
 <div class="wrapper" fxLayout="row wrap" fxLayoutGap="2em">
 
@@ -8,9 +12,6 @@
     <div class="details">
       <h2 class="name">{{k.name}}</h2>
       <p>{{k.bio}}</p>
-      <div class="action">
-        <a [href]="k.id">More Infor</a>
-      </div>
     </div>
 
   </div>

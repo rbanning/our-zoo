@@ -4,6 +4,7 @@ export interface IKeeper {
   name: string;
   bio: string;
   avatar: string;
+  real: boolean;
 }
 
 export const AVATARS = [
@@ -40,16 +41,19 @@ export class Keeper implements IKeeper {
   name: string;
   bio: string;
   avatar: string;
+  real: boolean;
 
   constructor(obj: any = null) {
     this.id = GUID.create().toSimpleString();
     this.avatar = DEFAULT_AVATAR;
+    this.real = false;
 
     if (obj) {
       this.id = obj.id || this.id;
       this.name = obj.name;
       this.bio = obj.bio;
       this.avatar = obj.avatar || this.avatar;
+      this.real = obj.real === true;
     }
   }
 

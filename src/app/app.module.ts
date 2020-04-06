@@ -1,6 +1,7 @@
 import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 //material
@@ -43,6 +44,8 @@ import { KeepersComponent } from './pages/keepers/keepers.component';
 import { PanelSliderComponent } from './components/panel-slider/panel-slider.component';
 import { CreditBadgeComponent } from './components/credit-badge/credit-badge.component';
 import { AreasComponent } from './pages/areas/areas.component';
+import { AreaBadgeComponent } from './components/area-badge/area-badge.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 
 
@@ -63,6 +66,8 @@ import { AreasComponent } from './pages/areas/areas.component';
     PanelSliderComponent,
     CreditBadgeComponent,
     AreasComponent,
+    AreaBadgeComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +75,7 @@ import { AreasComponent } from './pages/areas/areas.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     HammerModule,
+    ReactiveFormsModule,
     materialModules
   ],
   providers: [

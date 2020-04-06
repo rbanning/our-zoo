@@ -8,16 +8,23 @@ export interface IExhibit {
   name: string;
   description: string[];
   area: IArea;
-  keeper: IKeeper
+  keeper: IKeeper;
   readonly imagePath: string;
+  readonly thumbPath: string;
 }
 
-export class Exhibit {
+export class Exhibit implements IExhibit {
   id: string;
   name: string;
   description: string[];
   area: IArea;
   keeper: IKeeper;
+  get imagePath() {
+    return `/assets/exhibits/${this.id}.jpg`;
+  }
+  get thumbPath() {
+    return `/assets/exhibits/${this.id}-thumb.jpg`;
+  }
 
   constructor(obj: any = null) {
     if (obj) {
