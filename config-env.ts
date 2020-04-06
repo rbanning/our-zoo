@@ -17,8 +17,7 @@ const envConfigFile = `export const environment = {
    trelloApi: '${process.env.TRELLO_API}',
    trelloToken: '${process.env.TRELLO_TOKEN}',
    appName: '${process.env.APP_NAME}',
-   platform: '${process.env.Platform}',
-   nodeEnv: '${process.env.NODE_ENV}',
+   platform: '${process.env.PLATFORM}',
    production: '${process.env.PRODUCTION || false}'
 };
 `;
@@ -27,8 +26,7 @@ const envProdConfigFile = `export const environment = {
    trelloApi: '${process.env.TRELLO_API}',
    trelloToken: '${process.env.TRELLO_TOKEN}',
    appName: '${process.env.APP_NAME}',
-   platform: '${process.env.Platform}',
-   nodeEnv: '${process.env.NODE_ENV}',
+   platform: '${process.env.PLATFORM}',
    production: '${process.env.PRODUCTION || true}'
 };
 `;

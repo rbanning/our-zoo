@@ -4,6 +4,5 @@ export interface IConfig {
   trelloToken?: string;
   appName?: string;
   platform?: string;
-  nodeEnv?: string;
   production?: string;
 }
