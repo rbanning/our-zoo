@@ -1,0 +1,64 @@
+@import "../../../variables";
+@import "../../../mixins";
+
+.exhibit {
+  @include block;
+  overflow: hidden;
+
+  .image {    
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .read-more {
+    position: absolute;
+    bottom: 0.5em;
+    width: 100%;
+    padding: 1em;
+    background-color: rgba(0,0,0, 0.3);
+    color: $color_white;
+    text-shadow: 1px 1px 4px $color_black;
+    text-align: center;
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: rgba(0,0,0, 0.6);
+    }
+
+    &.reveal {
+      opacity: 0;
+    }
+  }
+
+  .information {
+    position: absolute;
+    bottom: 0;
+    padding: 1em;
+    background-color: rgba(map-get($color_set_gray, light), 0.9);
+    color: $color_black;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+
+    &.reveal {
+      transform: translateY(0);
+    }
+
+    .close {
+      width: 100%;
+      text-align: right;
+      span {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background: rgba(0,0,0, 0.5);
+        color: $color_white;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+  }
+}

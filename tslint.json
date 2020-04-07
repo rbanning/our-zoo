@@ -10,6 +10,10 @@
       "allow-pascal-case",
       "allow-snake-case"
     ],
+    "max-line-length": [
+      true,
+      170
+    ],
     "member-ordering": false,
     "no-bitwise": false,
     "comment-format": false,
@@ -40,10 +44,6 @@
     ],
     "interface-name": false,
     "max-classes-per-file": false,
-    "max-line-length": [
-      true,
-      140
-    ],
     "member-access": false,
     "no-consecutive-blank-lines": false,
     "no-console": [

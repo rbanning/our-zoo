@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>
+  <img class="avatar" [src]="data.keeper.avatar" [alt]="'avatar for '+data.keeper.name">
+  <span class="name">{{data.keeper.name}}</span>
+</h1>
+<div mat-dialog-content>
+  <p>{{data.keeper.bio}}</p>
+</div>
+<div>
+  <button mat-stroked-button (click)="close()">Close</button>
+</div>

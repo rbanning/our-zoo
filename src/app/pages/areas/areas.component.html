@@ -5,7 +5,12 @@
 
   <div class="exhibits-wrapper" *ngIf="exhibits$ | async as exhibits">
     <div class="exhibits" *ngIf="exhibits.length > 0; else noExhibits">
-
+      <div class="viewer">
+        <div *ngFor="let item of exhibits">
+          <app-exhibit [exhibit]="item"></app-exhibit>
+        </div>
+      </div>
+      <app-exhibit-nav [exhibits]="exhibits"></app-exhibit-nav>
     </div>
   </div>
 

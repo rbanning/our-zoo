@@ -59,6 +59,9 @@ import { CreditBadgeComponent } from './components/credit-badge/credit-badge.com
 import { AreasComponent } from './pages/areas/areas.component';
 import { AreaBadgeComponent } from './components/area-badge/area-badge.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ExhibitNavComponent } from './components/exhibits/exhibit-nav/exhibit-nav.component';
+import { KeeperBadgeComponent } from './components/keeper-badge/keeper-badge.component';
+import { KeeperDialogComponent } from './dialog-templates/keeper-dialog/keeper-dialog.component';
 
 
 @NgModule({
@@ -80,6 +83,9 @@ import { ContactComponent } from './pages/contact/contact.component';
     AreasComponent,
     AreaBadgeComponent,
     ContactComponent,
+    ExhibitNavComponent,
+    KeeperBadgeComponent,
+    KeeperDialogComponent,
   ],
   imports: [
     BrowserModule,

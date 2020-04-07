@@ -1,0 +1,8 @@
+<div class="exhibit-nav"
+  *ngFor="let item of exhibits"
+  (click)="select(item)"
+  [matTooltip]="item.name"
+  [class.current]="item.id === current">
+
+  <img [src]="item.thumbPath" [alt]="item.name" />
+</div>
