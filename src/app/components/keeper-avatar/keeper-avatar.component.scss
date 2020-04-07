@@ -1,0 +1,22 @@
+@import "../../../variables";
+
+:host {
+  display: inline-block;
+}
+
+.avatar {
+  display: inline-block;
+  overflow: hidden;
+
+  border: solid 2px map-get($color_set_gray, medium);
+  border-radius: 50%;
+
+  &.active {
+    cursor: pointer;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

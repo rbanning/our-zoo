@@ -1,4 +1,8 @@
 <span class="keeper" (click)="viewMore()">
-  <img [src]="keeper.avatar" [alt]="keeper.name">
+  <app-keeper-avatar
+    [keeper]="keeper"
+    [size]="size"
+    [active]="false"
+    background="rgba(255,255,255, 0.8)"></app-keeper-avatar>
   <span class="name">{{keeper.name}}</span>
 </span>

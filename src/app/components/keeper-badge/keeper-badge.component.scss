@@ -5,11 +5,8 @@
   position: relative;
   display: inline-block;
   overflow: hidden;
-  
-  background: rgba(255,255,255, 0.8);
-  border: solid 2px map-get($color_set_gray, medium);
+
   border-radius: 50%;
-  padding: 2px;
   cursor: pointer;
 
   &:hover {
@@ -18,12 +15,6 @@
     }
   }
 
-}
-
-img {
-  display: block;
-  width: 100%;
-  height: auto;
 }
 
 .name {
@@ -37,7 +28,7 @@ img {
   color: $color_white;
   font-size: small;
 
-  transform: translateY(100%);
+  transform: translateY(150%);
   transition: transform 0.3s ease-in-out;
-  
+
 }

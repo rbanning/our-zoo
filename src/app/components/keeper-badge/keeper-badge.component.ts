@@ -29,7 +29,7 @@ export class KeeperBadgeComponent implements OnInit {
 
   viewMore() {
     const dialogRef = this.dialog.open(KeeperDialogComponent, {
-      width: '300px',
+      width: '400px',
       data: { keeper: this.keeper }
     });
   }

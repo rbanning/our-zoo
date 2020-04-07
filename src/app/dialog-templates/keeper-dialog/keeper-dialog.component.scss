@@ -1,14 +1,1 @@
-@import "../../../variables";
 
-
-img.avatar {
-  display: inline-block;
-  width: 60px; height: 60px;
-  border: solid 2px map-get($color_set_gray, medium);
-  border-radius: 50%;
-}
-
-.name {
-  display: inline-block;
-  margin: 0 1em;
-}

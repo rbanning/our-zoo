@@ -1,0 +1,8 @@
+<span class="avatar"
+  *ngIf="keeper"
+  [class.active]="active"
+  [style.width]="sizePX"
+  [style.height]="sizePX"
+  [style.background]="background">
+  <img [src]="keeper.avatar" [alt]="'avatar for ' + keeper.name" />
+</span>

@@ -62,6 +62,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ExhibitNavComponent } from './components/exhibits/exhibit-nav/exhibit-nav.component';
 import { KeeperBadgeComponent } from './components/keeper-badge/keeper-badge.component';
 import { KeeperDialogComponent } from './dialog-templates/keeper-dialog/keeper-dialog.component';
+import { KeeperAvatarComponent } from './components/keeper-avatar/keeper-avatar.component';
 
 
 @NgModule({
@@ -86,6 +87,7 @@ import { KeeperDialogComponent } from './dialog-templates/keeper-dialog/keeper-d
     ExhibitNavComponent,
     KeeperBadgeComponent,
     KeeperDialogComponent,
+    KeeperAvatarComponent,
   ],
   imports: [
     BrowserModule,

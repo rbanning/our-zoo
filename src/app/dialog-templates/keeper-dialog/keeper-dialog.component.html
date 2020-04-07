@@ -1,5 +1,5 @@
-<h1 mat-dialog-title>
-  <img class="avatar" [src]="data.keeper.avatar" [alt]="'avatar for '+data.keeper.name">
+<h1 mat-dialog-title fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="0.5em">
+  <app-keeper-avatar [keeper]="data.keeper" [size]="60" [active]="false"></app-keeper-avatar>
   <span class="name">{{data.keeper.name}}</span>
 </h1>
 <div mat-dialog-content>
