@@ -33,6 +33,7 @@ $color_set_grey: $color_set_gray;
 
 $color_primary: map-get($color_set_primary, "full");
 $color_accent:  map-get($color_set_accent, "full");
+$color_warn: map-get($app_warn, default);
 
 $color_link: $color_primary;
 

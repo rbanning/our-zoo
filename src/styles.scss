@@ -25,6 +25,9 @@ body {
 
 .clickable { cursor: pointer; }
 
+.monospace, .monospaced { font-family: 'Courier New', Courier, monospace; }
+.large, .larger { font-size: 1.2em; }
+
 a {
   @include link($color_link);
 }
@@ -34,6 +37,12 @@ a {
     margin: 1em 0;
   }
 }
+
+//colors 
+.color-primary { color: $color_primary; }
+.color-accent { color: $color_accent; }
+.color-warn,
+.color-error { color: $color_warn; }
 
 //key-value
 .key-value {

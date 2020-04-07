@@ -1,5 +1,60 @@
 <h1>Contact Us</h1>
 
-<p *ngFor="let item of configInfo">
-  {{item}}
-</p>
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+  <div class="field">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Full Name" formControlName="name" required>
+      <mat-icon matPrefix>face</mat-icon>
+      <mat-error *ngIf="isError('name')">{{ctrlError('name')}}</mat-error>
+      <mat-hint>REQUIRED - please include your full name!</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div class="field">
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Email Address" formControlName="email" required>
+      <mat-icon matPrefix>alternate_email</mat-icon>
+      <mat-error *ngIf="isError('email')">{{ctrlError('email')}}</mat-error>
+      <mat-hint>REQUIRED - how can we contact you?</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div class="field">
+    <mat-form-field appearance="outline">
+      <mat-label>Message</mat-label>
+      <input matInput placeholder="Brief Message" formControlName="message" required>
+      <mat-icon matPrefix>subject</mat-icon>
+      <mat-error *ngIf="isError('message')">{{ctrlError('message')}}</mat-error>
+      <mat-hint>REQUIRED - write a brief message</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div class="field">
+    <mat-form-field appearance="outline">
+      <mat-label>Are You Human?</mat-label>
+      <input matInput placeholder="enter the code below" formControlName="code" required>
+      <button type="button" mat-icon-button matPrefix (click)="codeRevealed = true">
+        <mat-icon>{{codeRevealed ? 'visibility' : 'visibility_off'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="isError('code')">{{ctrlError('code')}}</mat-error>
+      <mat-hint>REQUIRED - 
+        <span *ngIf="codeRevealed" class="monospaced">enter: <strong>{{code}}</strong></span>
+        <span *ngIf="!codeRevealed">click the reveal button above</span>
+      </mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div class="field">
+    <span class="color-warn" *ngIf="errorMessage">{{errorMessage}}</span>
+  </div>
+
+  <div class="actions" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="2em">
+    <button mat-stroked-button type="button" (click)="cancel()">Cancel</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="working || form.invalid">Send</button>
+    <mat-progress-spinner mode="indeterminate" diameter="20" *ngIf="working"></mat-progress-spinner>
+  </div>
+</form>
+

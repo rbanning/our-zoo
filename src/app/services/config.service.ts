@@ -23,4 +23,8 @@ export class ConfigService {
     //else
     return null;
   }
+
+  getAll(): IConfig {
+    return {...this._config};
+  }
 }

@@ -11,32 +11,30 @@ const targetProdPath = './src/environments/environment.prod.ts';
 const colors = require('colors');
 require('dotenv').config();   //was .load()
 
+const buildConfig = (production: boolean) => {
+    return  `export const environment = {
+        trelloUrl: '${process.env.TRELLO_URL}',
+        trelloApi: '${process.env.TRELLO_API}',
+        trelloToken: '${process.env.TRELLO_TOKEN}',
+        trelloBoardId: '${process.env.TRELLO_BOARD_ID}',
+        trelloListId: '${process.env.TRELLO_LIST_ID}',
+        appName: '${process.env.APP_NAME}',
+        platform: '${process.env.PLATFORM}',
+        production: '${process.env.PRODUCTION || production}'
+     };
+     `;
+};
+
 // `environment.ts` file structure
-const envConfigFile = `export const environment = {
-   trelloUrl: '${process.env.TRELLO_URL}',
-   trelloApi: '${process.env.TRELLO_API}',
-   trelloToken: '${process.env.TRELLO_TOKEN}',
-   appName: '${process.env.APP_NAME}',
-   platform: '${process.env.PLATFORM}',
-   production: '${process.env.PRODUCTION || false}'
-};
-`;
-const envProdConfigFile = `export const environment = {
-   trelloUrl: '${process.env.TRELLO_URL}',
-   trelloApi: '${process.env.TRELLO_API}',
-   trelloToken: '${process.env.TRELLO_TOKEN}',
-   appName: '${process.env.APP_NAME}',
-   platform: '${process.env.PLATFORM}',
-   production: '${process.env.PRODUCTION || true}'
-};
-`;
+const envConfigFile = buildConfig(false);
+const envProdConfigFile = buildConfig(true);
 
 //environment.ts log setup
 console.log(colors.magenta('The file `environment.ts` will be written with the following content: \n'));
 console.log(colors.grey(envConfigFile));
 
 //write the file
-fs.writeFile(targetPath, envConfigFile, function (err) {
+fs.writeFile(targetPath, envConfigFile, (err) => {
    if (err) {
        throw console.error(err);
    } else {
@@ -49,7 +47,7 @@ console.log(colors.magenta('The file `environment.prod.ts` will be written with 
 console.log(colors.grey(envProdConfigFile));
 
 //write the file
-fs.writeFile(targetProdPath, envProdConfigFile, function (err) {
+fs.writeFile(targetProdPath, envProdConfigFile, (err) => {
    if (err) {
        throw console.error(err);
    } else {

@@ -1,6 +1,7 @@
-import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -14,6 +15,12 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from "@angular/material/icon";
 import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { MatTooltipModule } from "@angular/material/tooltip";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { MatProgressBarModule } from "@angular/material/progress-bar";
 
 const materialModules = [
   MatToolbarModule,
@@ -25,6 +32,12 @@ const materialModules = [
   MatButtonModule,
   MatIconModule,
   MatCardModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatTooltipModule,
+  MatSnackBarModule,
+  MatProgressSpinnerModule,
+  MatProgressBarModule,
 ];
 
 import { AppRoutingModule } from './app-routing.module';
@@ -46,7 +59,6 @@ import { CreditBadgeComponent } from './components/credit-badge/credit-badge.com
 import { AreasComponent } from './pages/areas/areas.component';
 import { AreaBadgeComponent } from './components/area-badge/area-badge.component';
 import { ContactComponent } from './pages/contact/contact.component';
-
 
 
 @NgModule({
@@ -73,6 +85,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     FlexLayoutModule,
     HammerModule,
     ReactiveFormsModule,
