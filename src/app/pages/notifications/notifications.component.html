@@ -1,1 +1,10 @@
 <h1>Notifications</h1>
+<div class="notifications" *ngIf="notifications$ | async as notifications">
+  <div class="list" *ngIf="notifications.length > 0; else none">
+    <app-notification [notification]="item" *ngFor="let item of notifications"></app-notification>
+  </div>
+</div>
+
+<ng-template #none>
+  no notifications at this time
+</ng-template>

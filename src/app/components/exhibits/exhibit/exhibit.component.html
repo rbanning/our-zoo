@@ -1,0 +1,33 @@
+<div class="exhibit" [style.width]="width">
+  <div class="mat-headline">{{ exhibit.name }}</div>
+  <div class="image">
+    <img [src]="exhibit.imagePath" [alt]="exhibit.name" />
+  </div>
+  <div class="read-more" (click)="reveal = true" [class.reveal]="reveal">
+    <app-keeper-avatar [keeper]="exhibit.keeper" [size]="60" background="rgba(255,255,255, 0.5)"></app-keeper-avatar>
+    <span>Learn more about my exhibit</span>
+  </div>
+  <div class="information" [class.reveal]="reveal">
+    <div class="close">
+      <button mat-mini-fab color="primary" (click)="reveal = false">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <div class="description" *ngIf="exhibit.description">
+      <p>
+        <strong>About Me: </strong>{{exhibit.description.summary}}</p>
+      <p *ngIf="exhibit.description.location">
+        <strong>Where I Live:</strong> {{exhibit.description.location}}</p>
+      <p *ngIf="exhibit.description.food">
+        <strong>My Food:</strong> {{exhibit.description.food}}</p>
+      <p *ngIf="exhibit.description.fact">
+        <strong>Fun Fact:</strong> {{exhibit.description.fact}}</p>
+      <p *ngIf="exhibit.description.status">
+        <strong>My Status:</strong> {{exhibit.description.status}}</p>
+    </div>
+    <div class="keeper">
+      <app-keeper-badge [keeper]="exhibit.keeper"></app-keeper-badge>
+      Cared for by {{exhibit.keeper.name}}
+    </div>
+  </div>
+</div>

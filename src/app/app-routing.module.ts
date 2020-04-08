@@ -12,7 +12,10 @@ import { AreasComponent } from './pages/areas/areas.component';
 
 const routes: Routes = [
   {
-    path: "home", component: HomeComponent
+    path: "zoo-map", component: HomeComponent
+  },
+  {
+    path: "home", redirectTo: "zoo-map", pathMatch: "full"
   },
   {
     path: "about", component: AboutComponent
@@ -30,6 +33,9 @@ const routes: Routes = [
     path: "areas/:id", component: AreasComponent
   },
   {
+    path: "areas/:id/:exhibit", component: AreasComponent
+  },
+  {
     path: "credits", component: CreditsComponent
   },
   {
@@ -42,7 +48,7 @@ const routes: Routes = [
     path: "notifications", component: NotificationsComponent
   },
   {
-    path: "", redirectTo: "home", pathMatch: "full"
+    path: "", redirectTo: "zoo-map", pathMatch: "full"
   }
 ];
 

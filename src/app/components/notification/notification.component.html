@@ -1,0 +1,7 @@
+<div class="heading" [class.urgent]="notification.type === 'urgent'">
+  {{notification.heading}}</div>
+<div class="message">{{notification.message}}</div>
+<div class="action" *ngIf="notification.route">
+  <a [routerLink]="notification.route">{{notification.routeLabel || 'learn more...'}}</a>
+</div>
+<div class="date">{{date}}</div>

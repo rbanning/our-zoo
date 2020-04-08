@@ -10,7 +10,7 @@
           <app-exhibit [exhibit]="item"></app-exhibit>
         </div>
       </div>
-      <app-exhibit-nav [exhibits]="exhibits"></app-exhibit-nav>
+      <app-exhibit-nav [exhibits]="exhibits" [current]="currentExhibit ? currentExhibit.id : null" (selected)="jumpTo($event)"></app-exhibit-nav>
     </div>
   </div>
 

@@ -52,7 +52,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { NotificationsComponent } from './pages/notifications/notifications.component';
 import { CreditsComponent } from './pages/credits/credits.component';
-import { ExhibitComponent } from './components/exhibit/exhibit.component';
+import { ExhibitComponent } from './components/exhibits/exhibit/exhibit.component';
 import { KeepersComponent } from './pages/keepers/keepers.component';
 import { PanelSliderComponent } from './components/panel-slider/panel-slider.component';
 import { CreditBadgeComponent } from './components/credit-badge/credit-badge.component';
@@ -63,6 +63,7 @@ import { ExhibitNavComponent } from './components/exhibits/exhibit-nav/exhibit-n
 import { KeeperBadgeComponent } from './components/keeper-badge/keeper-badge.component';
 import { KeeperDialogComponent } from './dialog-templates/keeper-dialog/keeper-dialog.component';
 import { KeeperAvatarComponent } from './components/keeper-avatar/keeper-avatar.component';
+import { NotificationComponent } from './components/notification/notification.component';
 
 
 @NgModule({
@@ -88,6 +89,7 @@ import { KeeperAvatarComponent } from './components/keeper-avatar/keeper-avatar.
     KeeperBadgeComponent,
     KeeperDialogComponent,
     KeeperAvatarComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,

@@ -14,10 +14,10 @@ export class KeeperAvatarComponent implements OnInit {
   size: number = 60;
 
   @Input()
-  active: boolean = true;
+  active: boolean = false;
 
   @Input()
-  background: string = "rgba(255,255,255, 0.8)";
+  background: string = "rgba(255,255,255, 0)";
 
   @Output()
   touch = new EventEmitter<IKeeper>();
