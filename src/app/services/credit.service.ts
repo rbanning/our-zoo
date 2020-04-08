@@ -7,6 +7,10 @@ export class CreditService {
   private creditSubject: BehaviorSubject<ICredit[]>;
   credits$: Observable<ICredit[]>;
 
+  getCredits(): ICredit[] {
+    return [...this.creditSubject.value];
+  }
+
   constructor() {
     this.creditSubject = new BehaviorSubject<ICredit[]>(
       photographers.map(name => {

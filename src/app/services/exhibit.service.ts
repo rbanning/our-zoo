@@ -10,6 +10,12 @@ export class ExhibitService {
   private exhibitSubject: BehaviorSubject<IExhibit[]>;
   exhibit$: Observable<IExhibit[]>;
 
+  getExhibits(areaID: string = null): IExhibit[] {
+    const ret = [...this.exhibitSubject.value];
+    return (areaID) ? ret.filter(m => m.area && m.area.id === areaID) : ret;
+  }
+
+
   constructor(
     private areaService: AreaService,
     private keeperService: KeeperService
@@ -50,7 +56,7 @@ const exhibits = [
   },
   {
     id: "rock-dachs", name: 'Rock Dachs',
-    area: "rainy-forest", keeper: '@rob',
+    area: "desert", keeper: '@rob',
     created: "2020-04-04",
     description: {
       summary: "Similar in shape to his near cousin, the dachshund dog, the Rock Dachs has a long body, short legs, and a cute face."
@@ -64,7 +70,7 @@ const exhibits = [
   },
   {
     id: "pop-penguin", name: 'Popping Penguins',
-    area: "arctic-circle", keeper: '@ruby',
+    area: "desert", keeper: '@ruby',
     created: "2020-04-07",
     description: {
       summary: "Similar to those of Mr. Popper's, Popping Penguins have little puff-balls on their heads. "

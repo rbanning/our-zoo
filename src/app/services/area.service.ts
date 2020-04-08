@@ -8,6 +8,10 @@ export class AreaService {
   private areaSubject: BehaviorSubject<IArea[]>;
   areas$: Observable<IArea[]>;
 
+  getAreas(): IArea[] {
+    return [...this.areaSubject.value];
+  }
+
   constructor(
     creditService: CreditService
   ) {

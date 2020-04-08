@@ -128,16 +128,23 @@ export class KeeperService {
   private keeperSubject: BehaviorSubject<IKeeper[]>;
   keepers$: Observable<IKeeper[]>;
 
+  getKeepers(): IKeeper[] {
+    return [...this.repo.getKeepers()];
+  }
+  getAvatars(): IKeeper[] {
+    return [...this.repo.getAvailable()];
+  }
+
   constructor() {
     this.keeperSubject = new BehaviorSubject<IKeeper[]>(this.repo.getKeepers());
     this.keepers$ = this.keeperSubject.asObservable();
   }
 
   loadKeepersOnly() {
-    this.keeperSubject.next([...this.repo.getKeepers()]);
+    this.keeperSubject.next(this.getKeepers());
   }
   loadAvatarsOnly() {
-    this.keeperSubject.next([...this.repo.getAvailable()]);
+    this.keeperSubject.next(this.getAvatars());
   }
   loadAll() {
     this.keeperSubject.next([...this.repo.getKeepers(), ...this.repo.getAvailable()]);
