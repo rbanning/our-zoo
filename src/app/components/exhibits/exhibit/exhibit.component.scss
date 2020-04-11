@@ -7,12 +7,22 @@
 
   .image {
     display: block;
+    width: 100%;
+    min-height: 200px;
     img {
       display: block;
       width: 100%;
       height: auto;
     }
   }
+
+  &:hover {
+    .read-more {
+      background-color: rgba(0,0,0, 0.6);
+      transform: translateY(180px);
+    }
+  }
+
 
   .read-more {
     position: absolute;
@@ -32,11 +42,6 @@
     cursor: pointer;
 
     transition: all 0.3s ease-in-out;
-
-    &:hover {
-      background-color: rgba(0,0,0, 0.6);
-      transform: translateY(180px);
-    }
 
     &.reveal {
       opacity: 0;
@@ -75,4 +80,9 @@
       }
     }
   }
+}
+
+
+.error {
+  color: $color_warn;
 }

@@ -1,9 +1,10 @@
 <div class="panel-slider"
   [style.width]="width+'px'"
-  [style.height]="height+'px'">
+  [style.height]="currentHeight ? (currentHeight+'px') : ''">
 
   <div class="slider"
     (pan)="pan($event)"
+    [style.height]="currentHeight ? (currentHeight+'px') : ''"
     [style.transform]="'translateX(' + translateX + 'px)'">
 
     <ng-content></ng-content>
@@ -12,8 +13,8 @@
 
 </div>
 <div class="bubble-nav"
+  *ngIf="nav"
   [style.width]="width+'px'"
-  [style.height]="height+'px'"
   fxLayout="row wrap"
   fxLayoutAlign="center center"
   fxLayoutGap="0.5em">

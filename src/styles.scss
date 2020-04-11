@@ -38,7 +38,11 @@ a {
   }
 }
 
-//colors 
+.app-panel {
+  display: inline-block;
+}
+
+//colors
 .color-primary { color: $color_primary; }
 .color-accent { color: $color_accent; }
 .color-warn,

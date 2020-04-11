@@ -6,9 +6,11 @@
   <div class="exhibits-wrapper" *ngIf="exhibits$ | async as exhibits">
     <div class="exhibits" *ngIf="exhibits.length > 0; else noExhibits">
       <div class="viewer">
-        <div *ngFor="let item of exhibits">
-          <app-exhibit [exhibit]="item"></app-exhibit>
-        </div>
+        <app-panel-slider [width]="900">
+          <div appPanel *ngFor="let item of exhibits">
+            <app-exhibit [exhibit]="item"></app-exhibit>
+          </div>
+        </app-panel-slider>
       </div>
       <app-exhibit-nav [exhibits]="exhibits" [current]="currentExhibit ? currentExhibit.id : null" (selected)="jumpTo($event)"></app-exhibit-nav>
     </div>

@@ -64,6 +64,8 @@ import { KeeperBadgeComponent } from './components/keeper-badge/keeper-badge.com
 import { KeeperDialogComponent } from './dialog-templates/keeper-dialog/keeper-dialog.component';
 import { KeeperAvatarComponent } from './components/keeper-avatar/keeper-avatar.component';
 import { NotificationComponent } from './components/notification/notification.component';
+import { PanelDirective } from './directives/panel.directive';
+import { PanelTesterComponent } from './components/panel-tester/panel-tester.component';
 
 
 @NgModule({
@@ -89,7 +91,9 @@ import { NotificationComponent } from './components/notification/notification.co
     KeeperBadgeComponent,
     KeeperDialogComponent,
     KeeperAvatarComponent,
-    NotificationComponent
+    NotificationComponent,
+    PanelDirective,
+    PanelTesterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,27 @@
+:host ::ng-deep {
+  .ui {
+    margin: 1em 0;
+  }
+  .tester {
+    display: block;
+    width: 400px;
+    overflow: hidden;
+    border: solid 3px #000;
+
+    .panel {
+      display: inline-block;
+      margin: 0.5em;
+      padding: 0.5em;
+      border: solid 1px red;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+}

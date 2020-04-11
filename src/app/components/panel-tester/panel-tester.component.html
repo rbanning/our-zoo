@@ -1,0 +1,12 @@
+<h4>Panel Tester</h4>
+<div class="ui" fxLayout="row" fxLayoutGap="1em">
+  <button mat-stroked-button (click)="back()" [disabled]="current === 0">BACK</button>
+  <span>{{current}}</span>
+  <button mat-stroked-button (click)="next()" [disabled]="current === panels.length - 1">NEXT</button>
+</div>
+<div class="tester" [style.height]="currentHeight">
+  <div class="viewer">
+
+  </div>
+  <ng-content></ng-content>
+</div>

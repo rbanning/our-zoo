@@ -1,9 +1,9 @@
-<div class="exhibit" [style.width]="width">
+<div class="exhibit" [style.width]="width" (click)="reveal = !reveal">
   <div class="mat-headline">{{ exhibit.name }}</div>
   <div class="image">
-    <img [src]="exhibit.imagePath" [alt]="exhibit.name" />
+    <img [src]="loadedImage" [alt]="exhibit.name" *ngIf="loadedImage; else spinner" />
   </div>
-  <div class="read-more" (click)="reveal = true" [class.reveal]="reveal">
+  <div class="read-more" (click)="reveal = true" [class.reveal]="reveal" *ngIf="loadedImage">
     <app-keeper-avatar [keeper]="exhibit.keeper" [size]="60" background="rgba(255,255,255, 0.5)"></app-keeper-avatar>
     <span>Learn more about my exhibit</span>
   </div>
@@ -31,3 +31,10 @@
     </div>
   </div>
 </div>
+
+<ng-template #spinner>
+  <div class="spinner">
+    <mat-spinner *ngIf="!failedImage"></mat-spinner>
+    <span class="error" *ngIf="failedImage"><strong>ERROR: </strong> {{failedImage}}</span>
+  </div>
+</ng-template>
